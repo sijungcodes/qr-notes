@@ -8,13 +8,13 @@ import 'tachyons';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<EditorPage />} />
         <Route path="/reader" element={<ReaderPage />} />
         <Route path="/editor" element={<EditorPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
