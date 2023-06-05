@@ -15,7 +15,7 @@ const EditorPage = () => {
   
   const replaceUrlPath = () => {
     const newNote = encodeURIComponent(editorValue);
-    return `${window.location.origin}/reader/?note=${newNote}`;
+    return `${window.location.origin}/#/reader/?note=${newNote}`;
   };
 
   const handleOnClipCopyUrl = (event) => {
@@ -69,7 +69,7 @@ const EditorPage = () => {
         className="fl w-90 pa2 bn bg-white"
         
       />
-      <img src='/copy.png' className=" fr pa2"  width="17" height="17"/>
+      <img src='copy.png' className=" fr pa2"  width="17" height="17"/>
       </div>
       <div className="flex justify-center">
         <div className="w-50 flex justify-center mb2">

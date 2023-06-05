@@ -8,13 +8,15 @@ import 'tachyons';
 
 const App = () => {
   return (
+    <React.StrictMode>
     <HashRouter>
       <Routes>
         <Route path="/" element={<EditorPage />} />
         <Route path="/reader" element={<ReaderPage />} />
         <Route path="/editor" element={<EditorPage />} />
       </Routes>
-    </HashRouter>
+      </HashRouter>
+  </React.StrictMode>
   );
 };
 
