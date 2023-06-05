@@ -13,9 +13,20 @@ const EditorPage = () => {
   const [isTextareaModified, setIsTextareaModified] = useState(false);
   const [isCharacterLimitReached, setIsCharacterLimitReached] = useState(false);
   
+  const forceSlashAfterHash = () => {
+
+    let _hash = window.location.hash;
+    if (_hash[1] && _hash[1] != '/') {
+        return  window.location.origin + window.location.pathname + window.location.search + "#/" + _hash.slice(1);
+    }
+
+}
+
+forceSlashAfterHash();
+
   const replaceUrlPath = () => {
     const newNote = encodeURIComponent(editorValue);
-    return `${window.location.origin}/#/reader/?note=${newNote}`;
+    return `${window.location.origin}${window.location.pathname}#/reader/?note=${newNote}`;
   };
 
   const handleOnClipCopyUrl = (event) => {
@@ -76,7 +87,7 @@ const EditorPage = () => {
           <QRCode value={replaceUrlPath()} size={200} />
         </div>
       </div>
-        <a href={replaceUrlPath(currentUrl)}>Go to reader mode</a>
+        <a href={replaceUrlPath()}>Go to reader mode</a>
     </div>
   );
 };
